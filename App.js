@@ -1,17 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 import Name from './component/Name'
 
 export default function App() {
   const [name, setName] = useState('Taro')
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 30, color: 'red' }}>ReactNative開発</Text>
+      <TextInput
+        style={{height: 80, width: 100}}
+        placeholder="入力してください"
+        onChangeText={name => setName(name)}
+        // multiline={true}
+        clearButtonMode={'always'}
+        autoFocus={true}
+        keyboardAppearance={'dark'}
+        keyboardType={"phone-pad"}
+      />
       <Name name={'satoshi'} />
-      <Text style={{ fontSize: 30 }}>{name}</Text>
-      <Button onPress={() => setName('Jiro')} title="Change Name"/>
-      <StatusBar style="auto" />
     </View>
   );
 }
