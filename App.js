@@ -11,7 +11,7 @@ export default function App() {
         style={{height: 80, width: 100}}
         placeholder="入力してください"
         onChangeText={name => setName(name)}
-        // multiline={true}
+        multiline={true}
         clearButtonMode={'always'}
         autoFocus={true}
         keyboardAppearance={'dark'}
